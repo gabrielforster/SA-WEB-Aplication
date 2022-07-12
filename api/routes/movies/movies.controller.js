@@ -4,23 +4,23 @@ const router = express.Router();
 
 const moviesHandler = require("./movies.handler");
 
-router.get("/movies", async (req, res) => {
-    return await moviesHandler.searchMovies();
+router.get("/", async (req, res) => {
+    res.json(await moviesHandler.searchMovies());
 })
 
-router.get("/movies/:id", (req, res) => {
-
-})
-
-router.post("/movies", (req, res) => {
-    return await moviesHandler.createMovie(req.body);
-})
-
-router.patch("/movies/:id", (req, res) => {
+router.get("/:id", (req, res) => {
 
 })
 
-router.delete("/movies/:id", (req, res) => {
+router.post("/", async (req, res) => {
+    res.json(await moviesHandler.createMovie(req.body));
+})
+
+router.patch("/:id", (req, res) => {
+
+})
+
+router.delete("/:id", (req, res) => {
 
 })
 
