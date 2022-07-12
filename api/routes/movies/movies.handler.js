@@ -1,15 +1,15 @@
 const crud = require("../../db/index");
-
-function searchMovies() {
-    crud.get();
+ 
+async function searchMovies() {
+    return await crud.get();
 }
 
 function searchMovie() {
 
 }
 
-function createMovie() {
-
+async function createMovie(data) {
+    return await crud.create(data)
 }
 
 function updateMovie() {

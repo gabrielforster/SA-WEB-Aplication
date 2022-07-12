@@ -4,8 +4,8 @@ const router = express.Router();
 
 const moviesHandler = require("./movies.handler");
 
-router.get("/movies", (req, res) => {
-    moviesHandler.searchMovies();
+router.get("/movies", async (req, res) => {
+    return await moviesHandler.searchMovies();
 })
 
 router.get("/movies/:id", (req, res) => {
@@ -13,7 +13,7 @@ router.get("/movies/:id", (req, res) => {
 })
 
 router.post("/movies", (req, res) => {
-
+    return await moviesHandler.createMovie(req.body);
 })
 
 router.patch("/movies/:id", (req, res) => {
