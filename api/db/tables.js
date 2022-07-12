@@ -26,7 +26,7 @@ const films = sequelize.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        descricao: {
+        description: {
             type: DataTypes.STRING,
             allowNull: false,
         },
