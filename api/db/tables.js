@@ -19,8 +19,8 @@ sequelize.authenticate()
         console.log("Error: ", err);
     });
 
-const films = sequelize.define(
-    "films",
+const movies = sequelize.define(
+    "movies",
     {
         name: {
             type: DataTypes.STRING,
@@ -37,5 +37,5 @@ const films = sequelize.define(
     }
 );
 
-
-module.exports = {films}
+sequelize.sync();
+module.exports = {movies}

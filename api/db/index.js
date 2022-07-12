@@ -1,11 +1,20 @@
 // funcoes do banco
 
-const db = require("./tables");
+const { movies } = require("./tables");
 
 async function get(){
-    const movie = await db.findAll()
-    return movie;
+    return await movies.findAll();
+}
+
+async function create(data){
+    const {name, description} = data;
+    const savedData = movies.create({name, description}).then(() => {
+        return {"message": "success"};
+    }).catch(() => {
+        return {"message": "failed"};
+    })
+    return await savedData;
 }
 
 
-module.exports = {get};
+module.exports = {get, create};
