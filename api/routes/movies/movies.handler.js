@@ -4,16 +4,16 @@ async function searchMovies() {
     return await crud.get();
 }
 
-function searchMovie() {
-
+async function searchMovie(id) {
+    return await crud.getById(id);
 }
 
 async function createMovie(data) {
-    return await crud.create(data)
+    return await crud.create(data);
 }
 
-function updateMovie() {
-
+async function updateMovie(id, data) {
+    return await crud.update(id, data);
 }
 
 function removeMovie() {
